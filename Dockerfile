@@ -5,9 +5,9 @@ ARG 		WP_NAME=wordpress
 ARG 		WP_USER=yjung
 ARG 		WP_PWD=1234
 # init
-RUN			apt update -y; apt upgrade -y
+ RUN			apt update -y ; apt-get upgrade -y
 #install dependency
-RUN			apt instatll nginx php-fpm mariadb-server php-mysql php-mbstring vim curl -y
+RUN			apt instatll nginx php-fpm mariadb-server php-mysql php-mbstring vim curl -y 
 #setup Wordpress
 RUN 		openssl genrsa -out ft_server.localhost.key 4096; \
 			openssl req -x509 -nodes -days 365 \
